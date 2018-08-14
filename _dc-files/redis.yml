@@ -1,0 +1,18 @@
+version: '2.1'
+services:
+  redis:
+    container_name: medev_redis
+    image: redis:4.0.10-alpine
+    mem_limit: 500m
+    memswap_limit: 500m
+    cpu_shares: 10
+    command: sh /image/run.sh
+    ports:
+      - 7379:6379
+      - 36379:26379
+    networks:
+      medev_net:
+        ipv4_address: 10.15.0.22
+    volumes:
+      - ./../redis:/image
+      - medev-data-volume:/var/lib/redis

@@ -1,0 +1,38 @@
+version: '2.1'
+services:
+
+  medev_php71:
+    extends:
+      file: _dc-files/php71.yml
+      service: php71
+
+  medev_nginx:
+    extends:
+      file: _dc-files/nginx.yml
+      service: nginx
+
+  medev_mysql:
+    extends:
+      file: _dc-files/mysql.yml
+      service: mysql
+
+  medev_mongo:
+    extends:
+      file: _dc-files/mongo.yml
+      service: mongo
+
+  medev_redis:
+    extends:
+      file: _dc-files/redis.yml
+      service: redis
+
+networks:
+  medev_net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.15.0.0/16
+         gateway: 10.15.0.1
+
+volumes:
+  medev-data-volume:

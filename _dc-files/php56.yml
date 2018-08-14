@@ -1,0 +1,53 @@
+version: '2.1'
+services:
+  php56:
+    container_name: medev_php56
+    image: meio/dev-php:5.6.37
+    mem_limit: 2g
+    memswap_limit: 2g
+    cpu_shares: 30
+    privileged: true
+    ports:
+      - 8443:443 # nginx ssl
+      - 9003:9003 # xdebug
+      - 9001:9001 # supervisor admin
+      - 9110:9110 # php
+    entrypoint: /image/start.sh
+
+    volumes:
+      - ./../php56:/image/
+
+      - ~/Workspace/:/var/www/
+      - ~/Workspace/data/php-log:/var/log/php
+
+    networks:
+      medev_net:
+        ipv4_address: 10.15.0.4
+
+    extra_hosts:
+      # services
+      php56: 10.15.0.4
+      php71: 10.15.0.5
+      php72: 10.15.0.6
+      mysql: 10.15.0.20
+      mongo: 10.15.0.21
+      mongodb: 10.15.0.21
+      redis: 10.15.0.22
+      rabbitmq: 10.15.0.23
+
+      # local domain
+      medev.local: 10.15.0.100
+      #
+      www-api.medev.local: 10.15.0.100
+      #
+      payment-api.medev.local: 10.15.0.100
+      #
+      config-api.medev.local: 10.15.0.100
+      #
+      location-api.medev.local: 10.15.0.100
+      #
+      myaccount-api.medev.local: 10.15.0.100
+      #
+      schedule-api.medev.local: 10.15.0.100
+      #
+      all-api.medev.local: 10.15.0.100
