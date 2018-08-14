@@ -17,7 +17,7 @@ try:
 except:
     arg1 = ""
 
-print "<<start_tasks.py " + arg1 + ">>"
+print("<<start_tasks.py " + arg1 + ">>")
 
 if USER != 'root':
     try:
@@ -33,7 +33,7 @@ class ProgressBarLoading(threading.Thread):
     def run(self):
         global pb_stop
         global pb_kill
-        print 'Loading....  ',
+        print ('Loading....  '),
         sys.stdout.flush()
         i = 0
         while pb_stop != True:
@@ -51,9 +51,9 @@ class ProgressBarLoading(threading.Thread):
             i += 1
 
         if pb_kill == True:
-            print '\b\b\b\b ABORT!',
+            print ('\b\b\b\b ABORT!'),
         else:
-            print '\b\b done!',
+            print ('\b\b done!'),
 
 
 def diff_date(arr, key, time_to_diff=None):
@@ -83,7 +83,7 @@ dateTimeNow = datetime.now()
 def run_command(cmd, hide_loader=None):
     global pb_stop
     global pb_kill
-    print 'Running: ' + ' '.join(cmd)
+    print ('Running: ' + ' '.join(cmd))
 
     if not hide_loader:
         pb.start()
@@ -97,7 +97,7 @@ def run_command(cmd, hide_loader=None):
         if output:
             # print "reto> ", res.returncode
             # print "OK> output ", output
-            print output
+            print (output)
             # pb_kill = True
             # if error:
             # print "rete> ", res.returncode
@@ -109,15 +109,15 @@ def run_command(cmd, hide_loader=None):
             #   print "CalledError > ",e.output
         pb_kill = True
     except OSError as e:
-        print "OSError > ", e.errno
-        print "OSError > ", e.strerror
-        print "OSError > ", e.filename
+        print ("OSError > ", e.errno)
+        print ("OSError > ", e.strerror)
+        print ("OSError > ", e.filename)
         error = e.strerror
         pb_kill = True
         pb_stop = True
     except:
         ex = sys.exc_info()[0]
-        print "Error > ", ex
+        print ("Error > ", ex)
         error = ex
         pb_kill = True
         pb_stop = True
@@ -159,9 +159,9 @@ def github():
     if gh_delta[0].days < -1:
         git_up = True
         ## update github
-        print "Update " + K
+        print ("Update " + K)
         out = run_command(["sudo", "-u", SUDO_USER, "git", '--work-tree=' + _abs_dir, '--git-dir=' + _abs_dir + '/.git', 'pull', 'origin', 'master'], 1)
-        print out[1]
+        print (out[1])
         sj[K] = dateTimeNow.strftime('%Y-%m-%d')
 
 
@@ -178,7 +178,7 @@ def brew():
     if brew_delta[0].days < -1:
         brew_up = True
         sj[K] = dateTimeNow.strftime('%Y-%m-%d')
-        print "Update " + K
+        print ("Update " + K)
         ## update brew
         # out = run_command(["/bin/sleep", "2"])
         # print out[1]
@@ -194,5 +194,5 @@ else:
 with open(filename, 'w') as metaF:
     metaF.write(json.dumps(sj))
 
-print "<<end_tasks.py " + arg1 + ">>"
-print ""
+print ("<<end_tasks.py " + arg1 + ">>")
+print ("")

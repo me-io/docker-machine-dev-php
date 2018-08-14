@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
 #ip addr add 192.168.64.100/32 dev bridge100
 #DEVIP="192.168.64.100"
 #DEVIP=$(docker-machine ip dev)
@@ -8,10 +10,10 @@ if [ "$DEVIP" = 0 ] || [ "$DEVIP" = "" ]; then
     exit 1
 fi
 # docker machine version
-DV="docker-machine-v2"
+DV="docker-machine-v3"
 FILE=/etc/hosts
 echo
-echo "medevCOM Machine IP : "  $DEVIP
+echo "MEDEV Machine IP : "  $DEVIP
 echo
 echo "* Updating $FILE file"
 grep -q "#$DV" "$FILE"
@@ -39,20 +41,11 @@ fi
 #255.255.255.255	broadcasthost
 #::1             localhost" > /etc/hosts
 #echo "# =====DEV MACHINE IPS START=====" >> /etc/hosts
-hosts=(
-    "www-api.medev.local"
-    "config-api.medev.local"
-    "myaccount-api.medev.local"
-    "location-api.medev.local"
-    "schedule-api.medev.local"
-    "all-api.medev.local"
-    "medev-machine"
-    )
 
+hosts=$(cat ${DIR}/../user_config/etc_hosts.txt | tr "\n" " " | tr "\r" " ")
 
-for i in "${hosts[@]}"
-do
-   :
+for i in ${hosts[*]}; do
+
    LINE=$DEVIP"    "$i" #$DV"
    LINEGREP=" "$i
    HOSTDATA=$(grep -vwE "$LINEGREP" $FILE)

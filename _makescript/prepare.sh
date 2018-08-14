@@ -25,8 +25,8 @@ chmod -R +x */*.sh
 chmod -R +x */*/*.sh
 my_dir="$(dirname "$0")"
 
-PY=`which python`
-$PY $my_dir/tasks.py github
+#PY=`which python`
+#$PY $my_dir/tasks.py github
 #$PY $my_dir/tasks.py
 echo
 "$my_dir/misc.sh"

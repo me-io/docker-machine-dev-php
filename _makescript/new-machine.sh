@@ -19,4 +19,4 @@ fi
 brew upgrade docker
 docker-machine upgrade dev
 
-docker-machine create --driver xhyve --xhyve-boot2docker-url="./scripts/boot2docker.iso" --xhyve-cpu-count 4 --xhyve-memory-size "8096" --xhyve-disk-size "20000" dev
+docker-machine create --driver xhyve --xhyve-cpu-count 4 --xhyve-memory-size "8096" --xhyve-disk-size "20000" dev

@@ -1,0 +1,2 @@
+www.medev-machine.local
+medev-machine

@@ -79,7 +79,3 @@ sudo -u ${SUDO_USER} docker-machine ssh ${MACHINE_NAME} "echo '$bootlocalCmd' | 
 echo "bootlocal.sh copied to ${MACHINE_NAME}"
 
 sudo -u ${SUDO_USER} docker-machine ssh ${MACHINE_NAME} "sudo sh /var/lib/boot2docker/bootlocal.sh"
-
-#sudo -u ${SUDO_USER} docker-machine ssh ${MACHINE_NAME} sudo cat /var/lib/boot2docker/profile
-
-#echo "Restart the machine docker-machine restart ${MACHINE_NAME}"
