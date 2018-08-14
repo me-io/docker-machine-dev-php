@@ -19,7 +19,6 @@ services:
       mysql: 10.15.0.20
       mongo: 10.15.0.21
       redis: 10.15.0.22
-      rabbitmq: 10.15.0.23
     volumes:
       - ./../nginx:/image/
       - ./../nginx/files/nginx.conf:/etc/nginx/nginx.conf

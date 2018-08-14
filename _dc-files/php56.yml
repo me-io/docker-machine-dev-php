@@ -2,7 +2,7 @@ version: '2.1'
 services:
   php56:
     container_name: medev_php56
-    image: meio/dev-php:5.6.37
+    image: meio/php-dev:5.6.37
     mem_limit: 2g
     memswap_limit: 2g
     cpu_shares: 30
@@ -33,21 +33,6 @@ services:
       mongo: 10.15.0.21
       mongodb: 10.15.0.21
       redis: 10.15.0.22
-      rabbitmq: 10.15.0.23
 
       # local domain
       medev.local: 10.15.0.100
-      #
-      www-api.medev.local: 10.15.0.100
-      #
-      payment-api.medev.local: 10.15.0.100
-      #
-      config-api.medev.local: 10.15.0.100
-      #
-      location-api.medev.local: 10.15.0.100
-      #
-      myaccount-api.medev.local: 10.15.0.100
-      #
-      schedule-api.medev.local: 10.15.0.100
-      #
-      all-api.medev.local: 10.15.0.100

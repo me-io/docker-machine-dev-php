@@ -8,7 +8,6 @@ services:
     cpu_shares: 20
     ports:
       - 37017:27017
-      - 38017:28017
     networks:
       medev_net:
         ipv4_address: 10.15.0.21

@@ -1,2 +1,2 @@
-www.medev-machine.local
+medev.local
 medev-machine
