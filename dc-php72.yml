@@ -16,10 +16,10 @@ services:
       file: _dc-files/mysql.yml
       service: mysql
 
-  medev_mongo:
-    extends:
-      file: _dc-files/mongo.yml
-      service: mongo
+#  medev_mongo:
+#    extends:
+#      file: _dc-files/mongo.yml
+#      service: mongo
 
   medev_redis:
     extends:

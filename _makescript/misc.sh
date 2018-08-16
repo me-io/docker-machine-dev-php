@@ -9,4 +9,4 @@ fi
 
 echo '* Current user:' $CUSER
 
-sudo chmod -R 777 ~/.docker/machine/machines/dev/config.json
+sudo chmod -R 777 ~/.docker/machine/machines/*/config.json
