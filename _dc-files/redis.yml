@@ -2,7 +2,7 @@ version: '2.1'
 services:
   redis:
     container_name: medev_redis
-    image: redis:4.0.10-alpine
+    image: redis:4.0.11-alpine
     mem_limit: 500m
     memswap_limit: 500m
     cpu_shares: 10

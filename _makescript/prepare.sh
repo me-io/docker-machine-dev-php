@@ -15,11 +15,11 @@ export CUSER=$CUSER
 
 sudo chmod -R 777 ~/.docker/machine/machines/*/config.json
 
-DEVIP=$(cat ~/.docker/machine/machines/dev/config.json | grep IPAddress | cut -d'"' -f4)
-if [ "$DEVIP" = 0 ] || [ "$DEVIP" = "" ]; then
-    echo "Run or create the docker machine"
-    exit 1
-fi
+#DEVIP=$(cat ~/.docker/machine/machines/dev/config.json | grep IPAddress | cut -d'"' -f4)
+#if [ "$DEVIP" = 0 ] || [ "$DEVIP" = "" ]; then
+#    echo "Run or create the docker machine"
+#    exit 1
+#fi
 
 chmod -R +x */*.sh
 chmod -R +x */*/*.sh

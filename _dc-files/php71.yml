@@ -2,7 +2,7 @@ version: '2.1'
 services:
   php71:
     container_name: medev_php71
-    image: meio/php-dev:7.1.20
+    image: meio/php-dev:7.1.21
     mem_limit: 2g
     memswap_limit: 2g
     cpu_shares: 30

@@ -1,4 +1,10 @@
 .idea/
 scripts/meta.txt
 _makescript/meta.txt
+npm-debug.log
+node_modules
+build
+dist
+lib
+yarn.lock
 !.gitkeep

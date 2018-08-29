@@ -2,7 +2,7 @@ version: '2.1'
 services:
   mongo:
     container_name: medev_mongo
-    image: mvertes/alpine-mongo:4.0.0-0
+    image: mvertes/alpine-mongo:4.0.1-0
     mem_limit: 1g
     memswap_limit: 1g
     cpu_shares: 20
