@@ -13,7 +13,7 @@ services:
 
   medev_mysql:
     extends:
-      file: _dc-files/mysql.yml
+      file: _dc-files/mysql5.yml
       service: mysql
 
 #  medev_mongo:

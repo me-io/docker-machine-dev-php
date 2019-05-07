@@ -2,7 +2,7 @@ version: '2.1'
 services:
   nginx:
     container_name: medev_nginx
-    image: nginx:1.15.2-alpine
+    image: nginx:1.16.0-alpine
     mem_limit: 500m
     memswap_limit: 500m
     cpu_shares: 20

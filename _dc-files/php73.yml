@@ -1,8 +1,8 @@
 version: '2.1'
 services:
   php72:
-    container_name: medev_php72
-    image: meio/php-dev:7.2.18
+    container_name: medev_php723
+    image: meio/php-dev:7.3.5
     mem_limit: 2g
     memswap_limit: 2g
     cpu_shares: 30

@@ -1,0 +1,23 @@
+version: '2.1'
+services:
+  mysql:
+    container_name: medev_mysql
+    image: mysql:8.0.16
+    mem_limit: 1g
+    memswap_limit: 1g
+    cpu_shares: 20
+    ports:
+      - 4306:3306
+    networks:
+      medev_net:
+        ipv4_address: 10.15.0.20
+    volumes:
+      - ./../mysql:/image
+      - ./../mysql/files/my.cnf:/etc/mysql/my.cnf:ro
+      - medev-data-volume:/data
+    entrypoint: /image/run.sh
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: db_name
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: 123456
